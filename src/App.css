@@ -1,0 +1,30 @@
+.app-shell { display: grid; gap: 24px; }
+.hero-panel { display: grid; grid-template-columns: minmax(0,1fr) minmax(300px,1fr); gap: 24px; }
+.hero-copy, .hero-controls { min-width: 0; }
+.hero-description, .puzzle-description { color: #526058; }
+.hero-controls, .picker { display: grid; gap: 12px; }
+.picker { gap: 6px; }
+.picker span, .stats-label { color: #526058; font-size: 13px; }
+.picker select { width: 100%; border: 1px solid #cbd3ce; border-radius: 8px; background: white; padding: 10px 12px; }
+.stats-card { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; border-bottom: 1px solid #dce1de; padding-bottom: 12px; }
+.stats-card > div { display: grid; gap: 4px; }
+.stats-card strong { font-size: 18px; }
+.tool-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.tool-button { border: 1px solid #cbd3ce; border-radius: 8px; background: white; color: #17221b; padding: 8px 12px; cursor: pointer; }
+.tool-button.active { background: var(--accent); border-color: var(--accent); color: white; }
+.status-banner { padding: 10px 0; color: #526058; }
+.status-banner.solved { color: #1c6036; font-weight: 700; }
+.board-panel { --clue-width: 62px; --board-gap: 8px; width: min(100%,720px); min-width: 0; margin: 0 auto; border: 1px solid #dce1de; border-radius: 12px; padding: 20px; display: grid; gap: 8px; }
+.column-clues { display: grid; gap: 2px; margin-left: calc(var(--clue-width) + var(--board-gap)); }
+.board-wrap { display: grid; grid-template-columns: var(--clue-width) minmax(0,1fr); gap: var(--board-gap); align-items: stretch; }
+.row-clues { display: grid; grid-template-rows: repeat(10,minmax(0,1fr)); gap: 2px; }
+.clue-stack { display: flex; font-size: 13px; font-weight: 600; line-height: 1.25; color: #273b2f; }
+.clue-stack.column { min-height: 44px; flex-direction: column; align-items: center; justify-content: end; }
+.clue-stack.row { min-width: 0; justify-content: end; align-items: center; gap: 5px; }
+.board-grid { display: grid; min-width: 0; gap: 2px; }
+.cell { aspect-ratio: 1; min-width: 0; padding: 0; line-height: 1; border: 1px solid #c8d0cb; border-radius: 3px; background: white; font-size: 16px; cursor: pointer; color: #64756b; }
+.cell-filled { background: var(--accent); border-color: var(--accent); }
+.cell-crossed { background: #f2f4f3; }
+.cell:focus-visible, .tool-button:focus-visible, .picker select:focus-visible { outline: 2px solid #17221b; outline-offset: 2px; }
+@media (max-width: 760px) { .hero-panel { grid-template-columns: 1fr; gap: 16px; } }
+@media (max-width: 480px) { .board-panel { --clue-width: 46px; --board-gap: 6px; padding: 10px; } .clue-stack { font-size: 11px; } .clue-stack.row { gap: 3px; } .tool-button { padding: 8px 10px; } }
